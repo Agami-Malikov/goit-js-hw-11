@@ -1,3 +1,66 @@
+body {
+  font-family: monospace, sans-serif;
+}
+
 .container {
-  max-width: 1200px;
+  max-width: 1220px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: rgb(58, 58, 187);
+  padding: 25px 0;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  text-align: center;
+}
+
+input {
+  height: 25px;
+  font-family: monospace;
+}
+
+.header-btn {
+  padding: 7px;
+  font-family: monospace;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.header-btn:hover {
+  background-color: rgb(196, 196, 228);
+}
+
+.gallery__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.photo-card {
+  margin-bottom: 30px;
+}
+
+.gallery__btn {
+  display: block;
+  margin: 0 auto 20px;
+  cursor: pointer;
+  border: none;
+  padding: 20px 35px;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.4s;
+  background-color: rgb(196, 196, 228);
+}
+
+.gallery__btn:hover {
+  background-color: rgb(58, 58, 187);
 }
