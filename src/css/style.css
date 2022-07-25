@@ -58,9 +58,5 @@ input {
   font-weight: 600;
   border-radius: 25px;
   transition: all 0.4s;
-  background-color: rgb(196, 196, 228);
-}
-
-.gallery__btn:hover {
   background-color: rgb(58, 58, 187);
 }

@@ -26,5 +26,4 @@ export class PixabayAPI {
   loadMore() {
     this.page += 1;
   }
-
 }

@@ -29,12 +29,14 @@ async function onSearchSubmit(event) {
   try {
     const { data } = await pixabayAPI.apiParameters();
     let totalPages = Math.ceil(data.totalHits / data.hits.length);
+    console.log(data.hits);
 
-    if (data.totalHits === 0) {
+    if (pixabayAPI.q === '' || data.hits.length === 0) {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
       refs.loadMoreBtn.style.display = 'none';
+      return;
     } else if (pixabayAPI.page === totalPages) {
       Notiflix.Notify.info(
         "We're sorry, but you've reached the end of search results."
@@ -42,11 +44,11 @@ async function onSearchSubmit(event) {
       refs.loadMoreBtn.style.display = 'none';
       createImgList(data.hits);
       lightbox.refresh();
+      return;
     } else {
       Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
       createImgList(data.hits);
       lightbox.refresh();
-      refs.loadMoreBtn.style.display = 'none';
       refs.loadMoreBtn.style.display = 'block';
     }
   } catch (error) {
@@ -115,4 +117,4 @@ async function onLoadMoreBtnClick() {
   }
 }
 
-  refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
+refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
